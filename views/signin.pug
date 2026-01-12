@@ -1,0 +1,7 @@
+extends layouts/main
+
+block content
+    form(action="/signin" method="POST")
+        input(placeholder="Name" name="name" )
+        input(placeholder="Password" name="password") 
+        button(type="submit") Sign in

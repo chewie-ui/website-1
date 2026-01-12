@@ -1,0 +1,8 @@
+extends layouts/main
+
+block content
+    form(action="/signin" method="POST")
+        input(placeholder="Name" name="name" )
+        input(placeholder="Password" name="password") 
+        input(placeholder="Confirm password" name="conformPassword") 
+        button(type="submit") Sign up

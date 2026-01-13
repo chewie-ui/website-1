@@ -1,0 +1,112 @@
+.header-phone,
+.header {
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  transition: 0.3s;
+  z-index: 10000;
+}
+
+.header {
+  display: none;
+}
+
+.header-phone .nav-container,
+.header .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-phone .nav-container .nav-left,
+.header .nav-container .nav-left,
+.header .nav-container .nav-left .nav-pages {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-phone .nav-container .nav-left .logo,
+.header .nav-container .nav-left .logo {
+  width: 24px;
+}
+
+.header-phone .nav-container .nav-left .nav-pages {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header .nav-container .nav-left .nav-pages a {
+  color: #333;
+}
+
+.header .nav-container .nav-left .nav-pages a.active,
+.header .nav-container .nav-left .nav-pages a:hover {
+  color: #000;
+}
+
+.header-phone .nav-container svg {
+  fill: #333;
+}
+
+.header-phone .nav-container .nav-right,
+.header .nav-container .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-phone .nav-container .nav-right .icon {
+  display: flex;
+  align-items: center;
+}
+
+.menu-phone {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  background-color: #fff;
+  transition: 0.3s;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  padding: 0 15px;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-phone.active {
+  left: 0%;
+}
+
+.menu-phone a {
+  width: 100%;
+  padding: 6px;
+  color: #333;
+}
+
+.menu-phone a.active {
+  color: #000;
+}
+
+@media all and (min-width: 820px) {
+  .header {
+    display: flex;
+  }
+
+  .header-phone {
+    display: none;
+  }
+}
+
+@media all and (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}

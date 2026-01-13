@@ -2,3 +2,8 @@ extends layouts/main
 
 block content
     h1 Labebabeazbe
+    
+    if user 
+        img(src=user.avatar)
+    else
+        p No user

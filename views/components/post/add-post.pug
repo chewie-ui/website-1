@@ -1,5 +1,4 @@
 div.block-add-post
-    .container
-        form.block-add-post-container
-            textarea.field-post(editablecontent="true" placeholder="Write something...")
+        form.block-add-post-container(action="/publish" method="post")
+            textarea.field-post(editablecontent="true" placeholder="Write something..." name='title')
             button.button Send

@@ -9,7 +9,7 @@
 - logout
 - faire beau design
 
-# To Do Now
+# To Do
 
 - Navigation
 
@@ -28,3 +28,10 @@
 - Posts (Add, Delete, Edit, Like, Comments,...)
 
 - Profile (Edit, Sub, Description,...)
+
+# Now
+
+- Scripts, add message
+- Login and Register
+- Add post with good name etc...
+- edit profile

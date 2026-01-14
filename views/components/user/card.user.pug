@@ -1,0 +1,30 @@
+div.card-user
+    .card-user-container
+        .card-user-infos
+            .user-picture
+                img(src="/images/default-pp.jpg" alt="profile picture")
+            .user-names
+                .user-name
+                    p #{user.name} #{user.surname}
+                .user-username
+                    p @#{user.username}
+        .card-user-bio
+            p Working on my project
+            p Links: https://skydev.be
+        .card-user-followers
+            .followers-container
+                .followers-box
+                    h2 42
+                    p Posts
+                .followers-box
+                    h2 128
+                    p Followers
+                .followers-box
+                    h2 76
+                    p Following
+            button.button New post
+            .user-buttons
+                button.button.secondary Edit profile
+                button.button.secondary Settings
+        .card-user-content
+            

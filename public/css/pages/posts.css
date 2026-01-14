@@ -1,51 +1,60 @@
-
-.block-container {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
-
 .block-add-post .block-add-post-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    border: 1px solid rgba(128, 128, 128, 0.16);
-    outline: none;
-    border-radius: 10px;
-    padding: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border: 1px solid rgba(128, 128, 128, 0.16);
+  outline: none;
+  border-radius: 10px;
+  padding: 13px;
+  box-shadow: var(--shadow);
 }
 
 .block-add-post .block-add-post-container .field-post {
-    height: 100px;
-    resize: none;
-    width: 100%;
-    border: none;
-    outline: none;
+  height: 100px;
+  resize: none;
+  width: 100%;
+  border: none;
+  outline: none;
 }
 
 .block-list-post .block-list-post-container .post-content {
-    border: var(--border);
-    border-radius: 10px;
-    padding: 13px;
+  border: var(--border);
+  border-radius: 10px;
+  padding: 13px;
+  box-shadow: var(--shadow);
 }
 
 .block-list-post .block-list-post-container .post-content .post-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
-.block-list-post .block-list-post-container .post-content .post-top .post-infos {
-    display: flex;
-    gap: 5px;
+.block-list-post
+  .block-list-post-container
+  .post-content
+  .post-top
+  .post-infos {
+  display: flex;
+  gap: 5px;
 }
 
-.block-list-post .block-list-post-container .post-content .post-top .post-infos .infos-username {
-    font-weight: 600;
+.block-list-post
+  .block-list-post-container
+  .post-content
+  .post-top
+  .post-infos
+  .infos-username {
+  font-weight: 600;
 }
 
-.block-list-post .block-list-post-container .post-content .post-top .post-infos .infos-name {
-    color: grey;
+.block-list-post
+  .block-list-post-container
+  .post-content
+  .post-top
+  .post-infos
+  .infos-name {
+  color: grey;
 }

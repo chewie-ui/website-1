@@ -1,0 +1,196 @@
+.block-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 35px;
+}
+
+.block-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  width: calc((100% - (35px * 2)) / 3);
+}
+
+.card-user .card-user-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  box-shadow: var(--shadow);
+  border: var(--border);
+  padding: 13px;
+  border-radius: 10px;
+}
+
+.card-user .card-user-container .card-user-infos {
+  display: flex;
+  gap: 17px;
+}
+
+.card-user .card-user-container .card-user-infos .user-picture {
+  width: 75px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card-user .card-user-container .card-user-infos .user-names {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.card-user .card-user-container .card-user-infos .user-names .user-name p {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.card-user .card-user-container .card-user-infos .user-names .user-username p {
+  color: grey;
+  text-transform: lowercase;
+}
+
+.card-user .card-user-container .card-user-followers .followers-container {
+  display: flex;
+}
+
+.card-user
+  .card-user-container
+  .card-user-followers
+  .followers-container
+  .followers-box {
+  width: calc((100% / 3));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-right: var(--border);
+}
+
+.card-user
+  .card-user-container
+  .card-user-followers
+  .followers-container
+  .followers-box:last-child {
+  border-right: none;
+}
+
+.card-user .card-user-container .card-user-followers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-user .card-user-container .card-user-followers .user-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.card-user .card-user-container .card-user-followers .user-buttons button {
+  width: 50%;
+}
+
+.suggestion-user .suggestion-user-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.suggestion-user .suggestion-user-container h2 {
+  font-size: 22px;
+}
+
+.suggestion-user .suggestion-user-container .suggestion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.suggestion-user .suggestion-user-container .suggestion-list .suggestion-box {
+  display: flex;
+  gap: 10px;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 13px;
+  border-radius: 7px;
+}
+
+.suggestion-user
+  .suggestion-user-container
+  .suggestion-list
+  .suggestion-box
+  .box-left
+  .user-image {
+  width: 75px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.suggestion-user
+  .suggestion-user-container
+  .suggestion-list
+  .suggestion-box
+  .box-right
+  .suggestion-button {
+  display: flex;
+  gap: 15px;
+}
+
+.suggestion-user
+  .suggestion-user-container
+  .suggestion-list
+  .suggestion-box
+  .box-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.suggestion-user
+  .suggestion-user-container
+  .suggestion-list
+  .suggestion-box
+  .box-right
+  .suggestion-button
+  button {
+  width: 50%;
+}
+
+.suggestion-user
+  .suggestion-user-container
+  .suggestion-list
+  .suggestion-box
+  .box-right
+  .user-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.suggestion-user
+  .suggestion-user-container
+  .suggestion-list
+  .suggestion-box
+  .box-right
+  .user-infos
+  p {
+  color: grey;
+}
+
+.suggestion-user
+  .suggestion-user-container
+  .suggestion-list
+  .suggestion-box
+  .box-right
+  .user-infos
+  h3 {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.block-container .block-list-post .block-list-post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}

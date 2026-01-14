@@ -2,13 +2,22 @@ extends layouts/main
 
 block links
     link(rel="stylesheet", href="/css/pages/posts.css")
+    link(rel="stylesheet", href="/css/pages/index.css")
 
 block content
     div.block.default-mg-t
         .container
-            .block-container
-                include components/post/add-post
-                include components/post/list-post
+            .block-row
+                .block-container
+                    include components/user/card.user.pug
+
+                .block-container
+                    include components/post/add-post
+                    include components/post/list-post
+
+                .block-container
+                    include components/user/suggestion.user.pug
+                
 
         
     

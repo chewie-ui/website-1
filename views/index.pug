@@ -1,7 +1,16 @@
 extends layouts/main
 
+block links
+    link(rel="stylesheet", href="/css/pages/posts.css")
+
 block content
-    h1 Labebabeazbe
+    div.block.default-mg-t
+        .container
+            .block-container
+                include components/post/add-post
+                include components/post/list-post
+
+        
     
     if user 
         img(src=user.avatar)

@@ -8,14 +8,16 @@ block content
     div.block.default-mg-t
         .container
             .block-row
-                .block-container
-                    include components/user/card.user.pug
-
+                .block-container.hidden-phone
+                    if user
+                        include components/user/card.user.pug
+                    else 
+                        p rien
                 .block-container
                     include components/post/add-post
                     include components/post/list-post
 
-                .block-container
+                .block-container.hidden-phone
                     include components/user/suggestion.user.pug
                 
 

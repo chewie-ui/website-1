@@ -17,7 +17,6 @@ router.get("/", async (req, res) => {
   console.log(users);
 
   res.render("index", {
-    user: { name: "jean", surname: "JEANNN", username: "EZIKEZKEZKEIZ" },
     posts,
   });
 });

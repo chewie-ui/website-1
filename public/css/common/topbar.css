@@ -49,7 +49,8 @@
   color: #000;
 }
 
-.header-phone .nav-container svg {
+.header-phone .nav-container svg,
+.header .nav-container svg {
   fill: #333;
 }
 

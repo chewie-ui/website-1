@@ -8,7 +8,11 @@
   display: flex;
   flex-direction: column;
   gap: 35px;
-  width: calc((100% - (35px * 2)) / 3);
+  width: 100%;
+}
+
+.block-container.hidden-phone {
+    display: none;
 }
 
 .card-user .card-user-container {
@@ -193,4 +197,17 @@
   display: flex;
   flex-direction: column;
   gap: 9px;
+}
+
+@media all and (min-width: 840px) {
+    .block-container.hidden-phone {
+        display: flex;
+    }
+
+    .block-container {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        width: calc((100% - (35px * 2)) / 3);
+    }
 }

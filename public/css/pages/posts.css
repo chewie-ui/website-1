@@ -38,15 +38,7 @@
   .post-top
   .post-infos {
   display: flex;
-  gap: 5px;
-}
-
-.block-list-post
-  .block-list-post-container
-  .post-content
-  .post-top
-  .post-infos
-  .infos-username {
+  gap: 2px;
   font-weight: 600;
 }
 
@@ -56,5 +48,103 @@
   .post-top
   .post-infos
   .infos-name {
+  color: grey;
+}
+
+.block-add-post .block-add-post-container .block-add-post-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block-add-post .block-add-post-container .block-add-post-options .block-sends {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.block-add-post
+  .block-add-post-container
+  .block-add-post-options
+  .block-sends
+  p {
+  color: grey;
+  font-size: 12px;
+}
+
+.block-list-post
+  .block-list-post-container
+  .post-content
+  .post-top
+  .post-options {
+  position: relative;
+}
+
+.block-list-post
+  .block-list-post-container
+  .post-content
+  .post-top
+  .post-options
+  .options-menu {
+  position: absolute;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  border: var(--border);
+  border-radius: 7px;
+  background-color: #fff;
+  z-index: 999;
+  overflow: hidden;
+  display: none;
+}
+
+.block-list-post
+  .block-list-post-container
+  .post-content
+  .post-top
+  .post-options
+  .options-menu.show {
+  display: flex;
+}
+
+.block-list-post
+  .block-list-post-container
+  .post-content
+  .post-top
+  .post-options
+  .options-menu
+  .option {
+  padding: 6px 8px;
+  padding-right: 20px;
+  transition: 0.3s;
+}
+
+.block-list-post
+  .block-list-post-container
+  .post-content
+  .post-top
+  .post-options
+  .options-menu
+  .option:hover {
+  background-color: var(--button-secondary-bg-hover-c);
+}
+
+.block-list-post
+  .block-list-post-container
+  .post-content
+  .post-body
+  .body-title {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.block-list-post
+  .block-list-post-container
+  .post-content
+  .post-body
+  .body-title
+  p.date {
+  text-align: right;
+  width: 100%;
   color: grey;
 }

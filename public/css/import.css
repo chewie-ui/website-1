@@ -7,6 +7,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  word-wrap: break-word;
 }
 
 :root {
@@ -63,6 +64,23 @@ img {
 
 .default-mg-t {
   margin-top: 95px;
+}
+
+.default-mg-bt {
+  margin-bottom: 95px;
+}
+
+.input {
+  background-color: #f9fafb;
+  padding: 8px 12px;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid #f9fafb;
+}
+
+.sticky {
+  position: sticky;
+  top: 95px;
 }
 
 @media all and (min-width: 820px) {

@@ -1,14 +1,16 @@
 const Post = require("../db/models/posts.model");
 
 exports.createPost = async (req, res) => {
-  const newPost = Post({
+  await Post.create({
     title: req.body.title,
+    author: req.user._id,
   });
 
-  const creatingPost = await newPost.save();
   res.redirect("/");
 };
 
 exports.getAllPosts = async () => {
-  return await Post.find({}).sort({ createdAt: -1 });
+  return await Post.find({})
+    .populate("author", "name surname")
+    .sort({ createdAt: -1 });
 };

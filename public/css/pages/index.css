@@ -2,6 +2,7 @@
   display: flex;
   align-items: flex-start;
   gap: 35px;
+  position: relative;
 }
 
 .block-container {
@@ -12,7 +13,7 @@
 }
 
 .block-container.hidden-phone {
-    display: none;
+  display: none;
 }
 
 .card-user .card-user-container {
@@ -200,14 +201,14 @@
 }
 
 @media all and (min-width: 840px) {
-    .block-container.hidden-phone {
-        display: flex;
-    }
+  .block-container.hidden-phone {
+    display: flex;
+  }
 
-    .block-container {
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
-        width: calc((100% - (35px * 2)) / 3);
-    }
+  .block-container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: calc((100% - (35px * 2)) / 3);
+  }
 }

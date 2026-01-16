@@ -1,4 +1,10 @@
 div.block-add-post
         form.block-add-post-container(action="/publish" method="post")
-            textarea.field-post(editablecontent="true" placeholder="Write something..." name='title')
-            button.button Send
+            textarea.field-post(editablecontent="true" maxlength="500" id="postTextarea" placeholder="Write something..." name='title')
+            div.block-add-post-options
+                div.block-options
+                div.block-sends
+                    p#charCount 0/500
+                    button.button Send
+
+script(src="/js/components/post/add-post.js")

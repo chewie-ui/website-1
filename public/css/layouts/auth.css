@@ -1,0 +1,81 @@
+section.auth {
+  height: 100dvh;
+  padding: 35px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.auth .auth-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 50px;
+}
+
+section.auth .auth-container .auth-right .auth-image {
+  width: 40px;
+}
+
+section.auth .auth-container .auth-left {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+section.auth .auth-container .auth-left h2 {
+  font-size: 28px;
+}
+
+section.auth .auth-container .auth-left .auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+section.auth .auth-container .auth-left .auth-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+section.auth .auth-container .auth-left .auth-form form .input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+section.auth .auth-container .auth-left .auth-form .redirect-div a {
+  color: dodgerblue;
+}
+
+.message-box {
+  color: red;
+  font-size: 12px;
+}
+
+@media all and (min-width: 840px) {
+  section.auth .auth-container {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  section.auth .auth-container .auth-right .auth-image {
+    width: 250px;
+  }
+
+  section.auth .auth-container .auth-left {
+    width: 47.5%;
+  }
+
+  section.auth .auth-container .auth-left .auth-form form .input-row {
+    flex-direction: row;
+  }
+
+  section.auth .auth-container .auth-left .auth-form form .input-row .input {
+    width: 100%;
+  }
+}

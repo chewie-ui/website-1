@@ -1,7 +1,11 @@
-extends layouts/main
+extends layouts/auth
 
 block content
+
     form(action="/signin" method="POST")
-        input(placeholder="Name" name="name" )
-        input(placeholder="Password" name="password") 
-        button(type="submit") Sign in
+        input.input(placeholder="Email" name="email")
+        input.input(placeholder="Password" name="password" type="password") 
+        button.button(type="submit") Sign in
+
+    div.redirect-div Don't have account? 
+        a(href='/signup') Register now

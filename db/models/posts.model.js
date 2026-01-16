@@ -1,22 +1,23 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
-const postSchema = new schema({
-  title: {
-    type: String,
-    required: true,
-    trim: true,
+const postSchema = new schema(
+  {
+    title: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    author: {
+      type: schema.Types.ObjectId,
+      ref: "user",
+      required: true,
+    },
   },
-  userId: {
-    type: schema.Types.ObjectId,
-    ref: "User",
-    required: false,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  {
+    timestamps: true,
+  }
+);
 
 const Post = mongoose.model("post", postSchema);
 

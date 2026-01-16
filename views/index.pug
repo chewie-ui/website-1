@@ -5,19 +5,19 @@ block links
     link(rel="stylesheet", href="/css/pages/index.css")
 
 block content
-    div.block.default-mg-t
+    div.block.default-mg-t.default-mg-bt
         .container
             .block-row
-                .block-container.hidden-phone
+                .block-container.hidden-phone.sticky
                     if user
                         include components/user/card.user.pug
                     else 
-                        p rien
+                        include components/user/card.signin.pug
                 .block-container
                     include components/post/add-post
                     include components/post/list-post
 
-                .block-container.hidden-phone
+                .block-container.hidden-phone.sticky
                     include components/user/suggestion.user.pug
                 
 

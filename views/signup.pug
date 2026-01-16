@@ -1,8 +1,20 @@
-extends layouts/main
+extends layouts/auth
 
 block content
-    form(action="/signin" method="POST")
-        input(placeholder="Name" name="name" )
-        input(placeholder="Password" name="password") 
-        input(placeholder="Confirm password" name="conformPassword") 
-        button(type="submit") Sign up
+    form(action="/signup" method="POST")
+        .input-row
+            input.input(placeholder="Surname" name="name")
+            input.input(placeholder="Name" name="surname")
+        input.input(placeholder="Email" name="email")
+        .input-row
+            input.input(placeholder="Password" name="password" type='password') 
+            input.input(placeholder="Confirm password" name="conformPassword" type='password') 
+        button.button(type="submit") Sign up
+
+    div.message-box
+
+    div.redirect-div Already have an account? 
+        a(href='/signin') Log in
+
+block scripts
+    script(src="/js/layouts/signup.js") 

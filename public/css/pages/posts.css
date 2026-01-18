@@ -97,6 +97,7 @@
   z-index: 999;
   overflow: hidden;
   display: none;
+  right: 0;
 }
 
 .block-list-post

@@ -32,3 +32,9 @@ exports.deletePost = async (req, res) => {
     console.error(e);
   }
 };
+
+exports.showPost = (req, res) => {
+  res.render("post", {
+    user: req.user
+  });
+};

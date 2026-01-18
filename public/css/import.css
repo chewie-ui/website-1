@@ -83,6 +83,12 @@ img {
   top: 95px;
 }
 
+.hidden-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 @media all and (min-width: 820px) {
   .container {
     max-width: 800px;

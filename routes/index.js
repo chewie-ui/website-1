@@ -18,7 +18,6 @@ router.get("/", isAuth, async (req, res) => {
     posts,
     user: req.user,
   });
-  console.log(req.user);
 });
 
 module.exports = router;

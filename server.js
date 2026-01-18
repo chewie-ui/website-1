@@ -6,18 +6,7 @@ const User = require("./db/models/user.model");
 const multer = require("multer");
 const sessionMiddleware = require("./config/session");
 const passport = require("passport");
-
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, path.join(__dirname, "/uploads"));
-    },
-    filename: (req, file, cb) => {
-      cb(null, Date.now() + file.originalname);
-    },
-  }),
-  limits: { fileSize: 2 * 1024 * 1024 },
-});
+const PORT = process.env.PORT || 3000;
 
 require("./db");
 require("./config/passport");
@@ -48,4 +37,6 @@ app.use(routes);
 //   res.redirect("/");
 // });
 
-app.listen(3000);
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
+});

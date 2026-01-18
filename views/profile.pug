@@ -1,0 +1,33 @@
+extends layouts/main
+
+block links
+    link(rel="stylesheet", href="/css/pages/profile.css")
+
+block content
+    div.block.default-mg-t.default-mg-bt
+        .container
+            .profile-container
+                .profile-header
+                    .profile-header-top
+                        .profile-picture
+                            img(src=profileUser.avatar || "/images/default-pp.jpg")
+                        .profile-infos
+                            h2 #{profileUser.surname} #{profileUser.name}
+                            .profile-buttons
+                                button.button Follow
+                                button.button.secondary Message
+                        .profile-follows
+                            .follows-info
+                                p Followers
+                                h3 #{followersCount}
+                            .follows-info
+                                p Following
+                                h3 #{followingCount}
+                            .follows-info
+                                p Publications
+                                h3 #{posts.length}
+                    .profile-header-bot
+                        .profile-nav
+                            div All
+                            div Post
+                            div Images

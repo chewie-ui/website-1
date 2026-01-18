@@ -36,6 +36,22 @@ const userSchema = new schema(
       default: null,
     },
 
+    followers: [
+      {
+        type: schema.Types.ObjectId,
+        ref: "user",
+        default: [],
+      },
+    ],
+
+    following: [
+      {
+        type: schema.Types.ObjectId,
+        ref: "user",
+        default: [],
+      },
+    ],
+
     createdAt: {
       type: Date,
       default: Date.now,

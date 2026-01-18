@@ -1,8 +1,21 @@
 div.card-user
     .card-user-container
         .card-user-infos
-            .user-picture
-                img(src="/images/default-pp.jpg" alt="profile picture")
+            form.user-picture(action="/profile/avatar" method='POST' enctype="multipart/form-data")
+                input(type="file" style="display: none" name="avatar" accept="image/*")
+                if user.avatar
+                    img(
+                        src=user.avatar
+                        alt="profile picture"
+                        id="avatarPicture"
+                    )
+                else
+                    img(
+                        src="/images/default-pp.jpg"
+                        alt="profile picture"
+                        id="avatarPicture"
+                    )
+
             .user-names
                 .user-name
                     p #{user.name} #{user.surname}
@@ -14,13 +27,13 @@ div.card-user
         .card-user-followers
             .followers-container
                 .followers-box
-                    h2 42
+                    h2 #{user.followers}
                     p Posts
                 .followers-box
-                    h2 128
+                    h2= user.followers
                     p Followers
                 .followers-box
-                    h2 76
+                    h2= user.following
                     p Following
             button.button New post
             .user-buttons
@@ -28,3 +41,4 @@ div.card-user
                 button.button.secondary Settings
         .card-user-content
             
+    script(src="/js/components/user/cardUser.js") 

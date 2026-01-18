@@ -1,0 +1,126 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-container .profile-header .profile-header-top {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.profile-container .profile-header .profile-header-top .profile-picture {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.profile-container .profile-header .profile-header-top .profile-picture img {
+  object-fit: cover;
+}
+
+.profile-container .profile-header .profile-header-top .profile-infos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-container
+  .profile-header
+  .profile-header-top
+  .profile-infos
+  .profile-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.profile-container .profile-header .profile-header-top .profile-infos h2 {
+  font-size: 24px;
+}
+
+.profile-container .profile-header .profile-header-top .profile-follows {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.profile-container
+  .profile-header
+  .profile-header-top
+  .profile-follows
+  .follows-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.profile-container
+  .profile-header
+  .profile-header-top
+  .profile-follows
+  .follows-info
+  p {
+  color: grey;
+}
+
+.profile-container
+  .profile-header
+  .profile-header-top
+  .profile-follows
+  .follows-info
+  h3 {
+  font-size: 24px;
+}
+
+@media all and (min-width: 320px) {
+  .profile-container .profile-header .profile-header-top .profile-picture img {
+    width: 300px;
+  }
+}
+@media all and (min-width: 820px) {
+  .profile-container .profile-header .profile-header-top .profile-picture {
+    width: 100%;
+  }
+
+  .profile-container .profile-header .profile-header-top {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .profile-container .profile-header .profile-header-top .profile-infos,
+  .profile-container .profile-header .profile-header-top .profile-follows {
+    width: calc((100% - 20px) / 2);
+  }
+
+  .profile-container .profile-header .profile-header-top .profile-follows {
+    justify-content: flex-end;
+  }
+
+  .profile-container
+    .profile-header
+    .profile-header-top
+    .profile-follows
+    .follows-info {
+    align-items: flex-end;
+  }
+}
+@media all and (min-width: 1280px) {
+  .profile-container .profile-header .profile-header-top .profile-picture {
+    width: 25%;
+  }
+
+  .profile-container .profile-header .profile-header-top .profile-infos,
+  .profile-container .profile-header .profile-header-top .profile-follows {
+    width: 35%;
+    padding-bottom: 30px;
+  }
+
+  .profile-container .profile-header .profile-header-top {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+  }
+}

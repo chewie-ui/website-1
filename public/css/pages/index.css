@@ -32,9 +32,14 @@
 }
 
 .card-user .card-user-container .card-user-infos .user-picture {
+  height: 75px;
   width: 75px;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.card-user .card-user-container .card-user-infos .user-picture img {
+  object-fit: cover;
 }
 
 .card-user .card-user-container .card-user-infos .user-names {

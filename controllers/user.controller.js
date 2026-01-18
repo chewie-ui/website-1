@@ -33,27 +33,76 @@ exports.logout = (req, res, next) => {
 
 exports.profile = async (req, res) => {
   const userId = req.params.userId;
-  const user = await User.findById(userId)
+
+  const profileUser = await User.findById(userId)
     .populate("followers", "name surname avatar")
     .populate("following", "name surname avatar");
 
-  if (!user) {
+  if (!profileUser) {
     return res.status(404).send("Utilisateur introuvable");
   }
 
   let isFollowing = false;
+  let isOwnProfile = false;
 
   if (req.user) {
-    isFollowing = user.followers.includes(req.user._id);
+    isFollowing = profileUser.followers.some((followerId) =>
+      followerId.equals(req.user._id),
+    );
+
+    isOwnProfile = req.user._id.equals(profileUser._id);
   }
+
   const posts = await Post.find({ author: userId })
     .populate("author", "name surname avatar")
     .sort({ createdAt: -1 });
+
   res.render("profile", {
-    profileUser: user,
-    followersCount: user.followers.length,
-    followingCount: user.following.length,
+    profileUser,
+    followersCount: profileUser.followers.length,
+    followingCount: profileUser.following.length,
     isFollowing,
+    isOwnProfile,
     posts,
+    user: req.user,
+  });
+};
+
+exports.followingSystem = async (req, res) => {
+  const targetUserId = req.params.userId;
+  const currentUserId = req.user._id;
+  console.log(currentUserId);
+
+  if (targetUserId === currentUserId.toString()) {
+    return res.status(400).json({ error: "Impossible de se follow soi-meme" });
+  }
+
+  const targetUser = await User.findById(targetUserId);
+  const currentUser = await User.findById(currentUserId);
+
+  if (!targetUser) {
+    return res.status(404).json({ error: "Utilisateur introuvable" });
+  }
+
+  const isFollowing = targetUser.followers.some((id) =>
+    id.equals(currentUserId),
+  );
+
+  if (isFollowing) {
+    // UNFOLLOW
+    targetUser.followers.pull(currentUserId);
+    currentUser.following.pull(targetUserId);
+  } else {
+    // FOLLOW
+    targetUser.followers.push(currentUserId);
+    currentUser.following.push(targetUserId);
+  }
+
+  await targetUser.save();
+  await currentUser.save();
+
+  res.json({
+    isFollowing: !isFollowing,
+    followersCount: targetUser.followers.length,
   });
 };

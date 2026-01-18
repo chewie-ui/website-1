@@ -27,13 +27,13 @@ div.card-user
         .card-user-followers
             .followers-container
                 .followers-box
-                    h2 #{user.followers}
+                    h2 #{user.followers.length}
                     p Posts
                 .followers-box
-                    h2= user.followers
+                    h2= user.followers.length
                     p Followers
                 .followers-box
-                    h2= user.following
+                    h2= user.following.length
                     p Following
             button.button New post
             .user-buttons

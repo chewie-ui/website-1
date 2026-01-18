@@ -66,6 +66,12 @@
   color: grey;
 }
 
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
 .profile-container
   .profile-header
   .profile-header-top
@@ -73,6 +79,67 @@
   .follows-info
   h3 {
   font-size: 24px;
+}
+
+.profile-container .profile-header .profile-header-bot {
+  display: flex;
+  border-bottom: var(--border);
+}
+
+.profile-container .profile-header .profile-header-bot .profile-nav {
+  display: flex;
+}
+
+.profile-container .profile-header .profile-header-bot .profile-nav div {
+  padding: 6px;
+  color: grey;
+}
+
+.profile-container .profile-header .profile-header-bot .profile-nav div.active {
+  color: #333;
+  border-bottom: 2px solid #333;
+  font-weight: 500;
+}
+
+.profile-container .profile-publications {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.profile-container .profile-publications .publications-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 7px;
+  padding: 13px;
+}
+
+.profile-container .profile-publications .publications-box .box-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-container
+  .profile-publications
+  .publications-box
+  .box-top
+  .top-settings {
+  cursor: pointer;
+}
+
+.profile-container .profile-publications .publications-box .box-top .top-date {
+  color: grey;
+}
+
+.profile-container .profile-publications .publications-box .box-bot h3 {
+  font-size: 18px;
+  font-weight: 400;
 }
 
 @media all and (min-width: 320px) {
@@ -106,6 +173,10 @@
     .follows-info {
     align-items: flex-end;
   }
+
+  .profile-container .profile-publications .publications-box {
+    width: calc((100% - 15px) / 2);
+  }
 }
 @media all and (min-width: 1280px) {
   .profile-container .profile-header .profile-header-top .profile-picture {
@@ -122,5 +193,9 @@
     display: flex;
     gap: 20px;
     align-items: flex-end;
+  }
+
+  .profile-container .profile-publications .publications-box {
+    width: calc((100% - (15px * 2)) / 3);
   }
 }

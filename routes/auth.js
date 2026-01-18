@@ -1,8 +1,13 @@
 const router = require("express").Router();
 const passport = require("passport");
-const { register, logout, profile } = require("../controllers/user.controller");
+const {
+  register,
+  logout,
+  profile,
+  followingSystem,
+} = require("../controllers/user.controller");
 const User = require("../db/models/user.model");
-
+const isAuthApi = require("../middlewares/isAuthApi");
 const uploadAvatar = require("../middlewares/uploadAvatar");
 
 router.post(
@@ -18,8 +23,10 @@ router.post(
     });
 
     res.redirect(`/profile/${req.user._id}`);
-  }
+  },
 );
+
+router.post("/follow/:userId", isAuthApi, followingSystem);
 
 router.get("/signin", (req, res) => {
   res.render("signin");
@@ -32,7 +39,7 @@ router.post(
   passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/signin",
-  })
+  }),
 );
 
 router.get("/logout", logout);

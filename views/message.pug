@@ -1,0 +1,31 @@
+extends layouts/main
+
+block links
+
+block content
+    div.block.default-mg-t.default-mg-bt
+        .container
+            .messaging-container
+                .messaging-users
+                    if chats
+                        each chat in chats
+                            .messaging-box
+
+
+                .messaging-chat
+                    .chat-box-container
+                        .chat-user-infos
+
+                        .chat-box
+                            .box-render-message
+                                div
+                            .box-field
+                                .field-button
+                                    button.button.secondary More
+                                .field-input
+                                    input(placeholder='Write here...')
+                                button.button Send
+
+
+
+block scripts

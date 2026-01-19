@@ -1,6 +1,10 @@
 const router = require("express").Router();
 const User = require("../db/models/user.model");
 const { getAllPosts } = require("../controllers/posts.controller");
+const {
+  getAllUsers,
+  getSuggestionUsers,
+} = require("../controllers/user.controller");
 const isAuth = require("../middlewares/isAuth");
 
 router.use(require("./auth"));
@@ -12,12 +16,22 @@ router.get("/file", (req, res) => {
 
 router.get("/", isAuth, async (req, res) => {
   const posts = await getAllPosts();
-  console.log(posts);
+  const users = await getSuggestionUsers(req.user);
 
   res.render("index", {
     posts,
     user: req.user,
+    users,
   });
+});
+
+router.post("/test", (req, res) => {
+  console.log("test valided");
+  res.sendStatus(200);
+});
+
+router.get("/message", (req, res) => {
+  res.render("message");
 });
 
 module.exports = router;

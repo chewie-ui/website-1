@@ -20,10 +20,8 @@ postOptions.forEach((svg) => {
 });
 
 document.addEventListener("click", (e) => {
-  console.log("click");
-
   const option = e.target.closest(".option");
-  if (!option) return console.error("option invalid", option);
+  if (!option) return;
   e.stopPropagation();
 
   const action = option.getAttribute("opt-content");

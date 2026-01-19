@@ -34,7 +34,9 @@ exports.deletePost = async (req, res) => {
 };
 
 exports.showPost = (req, res) => {
+  console.log(req.user);
+
   res.render("post", {
-    user: req.user
+    user: req.user,
   });
 };

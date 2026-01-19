@@ -52,12 +52,19 @@ const userSchema = new schema(
       },
     ],
 
+    hiddenSuggestions: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+
     createdAt: {
       type: Date,
       default: Date.now,
     },
   },
-  { versionKey: false }
+  { versionKey: false },
 );
 
 const User = mongoose.model("user", userSchema);

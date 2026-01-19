@@ -106,3 +106,20 @@ exports.followingSystem = async (req, res) => {
     followersCount: targetUser.followers.length,
   });
 };
+
+exports.getAllUsers = async () => {
+  return await User.find({}).sort({ createdAt: -1 }).limit(5);
+};
+
+exports.getSuggestionUsers = async (currentUser) => {
+  console.log(currentUser);
+
+  return await User.find({
+    _id: {
+      $ne: currentUser._id, // exclure soi-même
+      $nin: currentUser.following, // exclure les users déjà suivis
+    },
+  })
+    .sort({ createdAt: -1 })
+    .limit(5);
+};

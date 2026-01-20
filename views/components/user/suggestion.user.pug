@@ -2,17 +2,20 @@ div.suggestion-user
     .suggestion-user-container
         h2 Suggestions
         .suggestion-list
-            each user in users
-                
-                .suggestion-box(data-user-id=user._id)
-                    .box-left
-                        .user-image
-                            img(src=user.avatar || "/images/default-pp.jpg")
+            if users.length > 0 
+                each user in users
+                    
+                    .suggestion-box(data-user-id=user._id)
+                        .box-left
+                            .user-image
+                                img(src=user.avatar || "/images/default-pp.jpg")
 
-                    .box-right
-                        .user-infos
-                            h3 #{user.surname} #{user.name}
-                            p 4 mutual friends
-                        .suggestion-button
-                            button.button.suggestion-follow-btn Follow
-                            button.button.secondary.suggestion-remove-btn Remove
+                        .box-right
+                            .user-infos
+                                h3 #{user.surname} #{user.name}
+                                p 4 mutual friends
+                            .suggestion-button
+                                button.button.suggestion-follow-btn Follow
+                                button.button.secondary.suggestion-remove-btn Remove
+            else 
+                p Aucune suggestions pour le moment...

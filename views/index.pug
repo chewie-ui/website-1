@@ -21,9 +21,5 @@ block content
                     include components/user/suggestion.user.pug
                 
 
-        
-    
-    if user 
-        img(src=user.avatar)
-    else
-        p No user
+block scripts
+    script(src="/js/layouts/index.js" type="module")

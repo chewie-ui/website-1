@@ -1,0 +1,54 @@
+extends layouts/main
+
+block links
+    link(rel="stylesheet", href="/css/pages/message.css")
+
+block content
+    div.block.default-p-t
+        .container
+            .messaging-container
+                .messaging-users
+                    if chats
+                        each chat in chats
+                            .messaging-box
+
+                    if friends
+                        each friend in friends
+                            .friend-box
+                                .friend-avatar
+                                    img(src=friend.avatar || "/images/default-pp.jpg")
+                                .friend-infos
+                                    p #{friend.surname} #{friend.name}
+                                    .infos-msg 
+                                        p Last message... dsdsqdsqdsqdsqds
+                                        p 18h ago
+
+
+                .messaging-chat
+                    .chat-box-render
+                        .message-box-container.receipter
+                            div.message-box
+                                p Testfuedzhftrjeizourio dzsrdf ezrfeztrfezrtgyfezbvhurndejiz; 
+                        .message-box-container.receiver
+                            div.message-box
+                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
+                        .message-box-container.receiver
+                            div.message-box
+                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
+                        .message-box-container.receipter
+                            div.message-box
+                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
+                   
+                    .chat-user-infos
+                        .box-field
+                            .field-button
+                                button.button.secondary.flex
+                                    svg(xmlns="http://www.w3.org/2000/svg" height="21" viewBox="0 -960 960 960" width="21" fill="#333")
+                                        path(d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z")
+                            .field-input
+                                input.input(placeholder='Write here...')
+                            button.button Send
+
+
+
+block scripts

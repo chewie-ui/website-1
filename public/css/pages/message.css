@@ -1,0 +1,164 @@
+.block {
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+}
+
+.messaging-container {
+  display: flex;
+  height: 100%;
+}
+
+.messaging-container .messaging-users {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  border-right: var(--border);
+}
+
+.messaging-container .messaging-users .friend-box {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: var(--border);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.messaging-container .messaging-users .friend-box:hover {
+  background-color: whitesmoke;
+}
+
+.messaging-container .messaging-users .friend-box .friend-avatar {
+  min-width: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.messaging-container .messaging-users .friend-box .friend-avatar img {
+  object-fit: cover;
+}
+
+.messaging-container .messaging-users .friend-box .friend-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+  width: 100%;
+}
+
+.messaging-container .messaging-users .friend-box .friend-infos p:first-child {
+  font-weight: 500;
+}
+
+.messaging-container .messaging-users .friend-box .friend-infos .infos-msg {
+  color: grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.messaging-container
+  .messaging-users
+  .friend-box
+  .friend-infos
+  .infos-msg
+  p:first-child {
+  font-weight: 400;
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.messaging-container .messaging-chat {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 10px;
+}
+
+.messaging-container .messaging-chat .chat-user-infos {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.messaging-container .messaging-chat .chat-user-infos .box-field {
+  display: flex;
+  align-items: center;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 7px;
+  padding: 4px;
+}
+
+.messaging-container .messaging-chat .chat-user-infos .box-field .field-input {
+  width: 100%;
+}
+
+.messaging-container
+  .messaging-chat
+  .chat-user-infos
+  .box-field
+  .field-input
+  input {
+  background: none;
+  width: 100%;
+}
+
+.messaging-container .messaging-chat .chat-box-render {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.messaging-container .messaging-chat .chat-box-render .message-box-container {
+  width: 100%;
+  display: flex;
+}
+
+.messaging-container .messaging-chat .chat-box-render .message-box {
+  padding: 8px;
+  border-radius: 7px;
+  box-shadow: var(--shadow);
+  width: fit-content;
+}
+
+.messaging-container
+  .messaging-chat
+  .chat-box-render
+  .message-box-container.receipter {
+  justify-content: flex-end;
+  padding-left: 25px;
+}
+
+.messaging-container
+  .messaging-chat
+  .chat-box-render
+  .message-box-container.receiver {
+  justify-content: flex-start;
+  padding-right: 25px;
+}
+
+.messaging-container
+  .messaging-chat
+  .chat-box-render
+  .message-box-container.receipter
+  .message-box {
+  background-color: aliceblue;
+}
+
+.messaging-container
+  .messaging-chat
+  .chat-box-render
+  .message-box-container.receiver
+  .message-box {
+  background-color: var(--main-color);
+  color: var(--text-color);
+}

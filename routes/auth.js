@@ -5,6 +5,8 @@ const {
   logout,
   profile,
   followingSystem,
+  isUserFriend,
+  hideSuggestion,
 } = require("../controllers/user.controller");
 const User = require("../db/models/user.model");
 const isAuthApi = require("../middlewares/isAuthApi");
@@ -49,5 +51,7 @@ router.get("/profile/:userId", profile);
 router.get("/signup", (req, res) => {
   res.render("signup");
 });
+
+router.post("/hide-suggestion/:userId", hideSuggestion);
 
 module.exports = router;

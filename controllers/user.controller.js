@@ -117,9 +117,37 @@ exports.getSuggestionUsers = async (currentUser) => {
   return await User.find({
     _id: {
       $ne: currentUser._id, // exclure soi-même
-      $nin: currentUser.following, // exclure les users déjà suivis
+      $nin: [...currentUser.following, ...currentUser.hiddenSuggestions], // exclure les users déjà suivis
     },
   })
     .sort({ createdAt: -1 })
     .limit(5);
+};
+
+exports.isUserFriend = async (userAId, userBId) => {
+  const userA = await User.findById(userAId).select("followers following");
+
+  if (!userA) return false;
+
+  return userA.following.includes(userBId) && userA.followers.includes(userBId);
+};
+
+exports.getFriends = async (user) => {
+  const friendIds = user.following.filter((id) =>
+    user.followers.some((followerId) => followerId.equals(id)),
+  );
+
+  return await User.find({ _id: { $in: friendIds } });
+};
+
+exports.hideSuggestion = async (req, res) => {
+  const targetId = req.params.userId;
+  console.log(targetId);
+
+  const userId = req.user._id;
+  await User.findOneAndUpdate(userId, {
+    $addToSet: { hiddenSuggestions: targetId },
+  });
+
+  res.json({ status: "ok" });
 };

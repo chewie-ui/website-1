@@ -33,8 +33,19 @@ const suggestionFunc = () => {
   });
 
   suggestionRemoveBtn.forEach((removeBtn) => {
-    removeBtn.addEventListener("click", () => {
-      alert("REMOVED");
+    removeBtn.addEventListener("click", async () => {
+      const userId = removeBtn
+        .closest(".suggestion-box")
+        .getAttribute("data-user-id");
+      const res = await fetch(`hide-suggestion/${userId}`, { method: "post" });
+
+      const data = await res.json();
+
+      console.log(data);
+
+      if (data) {
+        removeBtn.closest(".suggestion-box").remove();
+      }
     });
   });
 };

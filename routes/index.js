@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const User = require("../db/models/user.model");
+const { getFriends } = require("../controllers/user.controller");
 const { getAllPosts } = require("../controllers/posts.controller");
 const {
   getAllUsers,
@@ -30,8 +31,13 @@ router.post("/test", (req, res) => {
   res.sendStatus(200);
 });
 
-router.get("/message", (req, res) => {
-  res.render("message");
+router.get("/message", isAuth, async (req, res) => {
+  const friends = await getFriends(req.user);
+
+  res.render("message", {
+    user: req.user,
+    friends,
+  });
 });
 
 module.exports = router;

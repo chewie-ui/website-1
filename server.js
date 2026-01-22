@@ -6,7 +6,7 @@ const User = require("./db/models/user.model");
 const multer = require("multer");
 const sessionMiddleware = require("./config/session");
 const passport = require("passport");
-const PORT = process.env.PORT || 3000;
+const setCurrentPath = require("./middlewares/setCurrentPath");
 
 require("./db");
 require("./config/passport");
@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(sessionMiddleware);
+app.use(setCurrentPath);
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -37,6 +38,4 @@ app.use(routes);
 //   res.redirect("/");
 // });
 
-app.listen(PORT, () => {
-  console.log("Server running on port", PORT);
-});
+module.exports = app;

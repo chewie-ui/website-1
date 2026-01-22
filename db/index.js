@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+const env = require(`../environment/${process.env.NODE_ENV}`);
 
 mongoose
-  .connect("mongodb://localhost:27017/test")
+  .connect(env.dbUrl)
   .then(() => {
     console.log("connected");
   })

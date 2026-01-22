@@ -53,7 +53,7 @@ document.addEventListener("click", (e) => {
       break;
 
     case "edit":
-      console.log("editing");
+      location.href = `/edit/${postId}`;
       break;
     case "report":
       console.log("reporting");

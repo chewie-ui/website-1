@@ -1,0 +1,30 @@
+#notifications {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 37%;
+  right: -100%;
+  z-index: 500;
+  background-color: rgb(250, 250, 250);
+  padding: 10px;
+  padding-top: 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+}
+
+#notifications.show {
+  right: 0;
+}
+
+#notifications .notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#notifications .notifications-header h2 {
+  font-size: 22px;
+}

@@ -34,9 +34,25 @@ exports.deletePost = async (req, res) => {
 };
 
 exports.showPost = (req, res) => {
-  console.log(req.user);
-
   res.render("post", {
     user: req.user,
   });
+};
+
+exports.editPost = async (req, res) => {
+  const postId = req.params.postId;
+
+  const post = await Post.findByIdAndUpdate(postId);
+
+  res.render("edit", {
+    post,
+    user: req.user,
+  });
+};
+
+exports.managePost = async (req, res) => {
+  const { postId } = req.params;
+  const { title } = req.body;
+  await Post.findByIdAndUpdate(postId, { title }, { new: true });
+  res.redirect("/");
 };

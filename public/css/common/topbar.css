@@ -47,6 +47,7 @@
 .header .nav-container .nav-left .nav-pages a.active,
 .header .nav-container .nav-left .nav-pages a:hover {
   color: #000;
+  font-weight: 500;
 }
 
 .header-phone .nav-container svg,
@@ -64,6 +65,7 @@
 .header-phone .nav-container .nav-right .icon,
 .header .nav-container .nav-right .icon {
   display: flex;
+  cursor: pointer;
   align-items: center;
 }
 

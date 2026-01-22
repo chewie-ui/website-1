@@ -1,0 +1,48 @@
+.back-btn {
+  margin-top: 35px;
+  width: 100%;
+}
+
+.edit-post-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.edit-post-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border: 1px solid rgba(128, 128, 128, 0.16);
+  outline: none;
+  border-radius: 10px;
+  padding: 13px;
+  box-shadow: var(--shadow);
+  width: 50%;
+  height: 50vh;
+}
+
+.edit-post-container form textarea {
+  height: 100%;
+  width: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+.edit-post-container .edit-post-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+}
+
+.edit-post-container .edit-post-options .counter-post {
+  color: grey;
+}

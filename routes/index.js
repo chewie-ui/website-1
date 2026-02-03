@@ -1,7 +1,10 @@
 const router = require("express").Router();
 const User = require("../db/models/user.model");
 const { getFriends } = require("../controllers/user.controller");
-const { getAllPosts } = require("../controllers/posts.controller");
+const {
+  getAllPosts,
+  getAllNotifications,
+} = require("../controllers/posts.controller");
 const {
   getAllUsers,
   getSuggestionUsers,
@@ -17,12 +20,14 @@ router.get("/file", (req, res) => {
 
 router.get("/", isAuth, async (req, res) => {
   const posts = await getAllPosts();
+  const notifications = await getAllNotifications(req.user._id);
   const users = await getSuggestionUsers(req.user);
 
   res.render("index", {
     posts,
     user: req.user,
     users,
+    notifications,
   });
 });
 

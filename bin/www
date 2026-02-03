@@ -1,6 +1,41 @@
 const fs = require("fs");
 const https = require("https");
 const http = require("http");
+const path = require("path");
 
+const app = require("../server");
 const PORT = process.env.PORT || 3000;
 
+const sslOptions = {
+  key: fs.readFileSync(path.join(__dirname, "../ssl/local.key")),
+  cert: fs.readFileSync(path.join(__dirname, "../ssl/local.crt")),
+};
+const server = https.createServer(sslOptions, app);
+
+const { Server } = require("socket.io");
+const io = new Server(server);
+
+const users = new Map();
+
+io.on("connection", (socket) => {
+  socket.on("register", (userId) => {
+    console.log("📥 register reçu :", userId);
+    users.set(userId, socket.id);
+    console.log("👥 users map :", users);
+  });
+
+  socket.on("disconnect", () => {
+    for (const [key, val] of users.entries()) {
+      if (val === socket.id) {
+        users.delete(key);
+      }
+    }
+  });
+});
+
+app.locals.io = io;
+app.locals.users = users;
+
+server.listen(PORT, () => {
+  console.log("✅ HTTPS + Socket.IO actif sur https://localhost:" + PORT);
+});

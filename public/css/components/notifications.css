@@ -28,3 +28,29 @@
 #notifications .notifications-header h2 {
   font-size: 22px;
 }
+
+#notifications
+  .notifications-container
+  .notification
+  .user-notif-cont
+  .user-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#notifications .notifications-container .notification,
+#notifications .notifications-container .notification .user-notif-cont {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#notifications .notifications-container .notification .post-notif-cont p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100px;
+  white-space: nowrap;
+  cursor: pointer;
+}

@@ -5,6 +5,7 @@ const {
   showPost,
   editPost,
   managePost,
+  likePublication
 } = require("../controllers/posts.controller");
 
 const isAuth = require("../middlewares/isAuth");
@@ -16,5 +17,7 @@ router.get("/post", showPost);
 
 router.get("/edit/:postId", isAuth, editPost);
 router.post("/edit-post/:postId", managePost);
+
+router.post("/posts/:postId/like", likePublication);
 
 module.exports = router;

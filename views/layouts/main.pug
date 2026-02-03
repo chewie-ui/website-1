@@ -6,6 +6,13 @@ html(lang="fr")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet" href="/css/import.css")
         link(rel="shortcut icon", href="/images/icon.svg", type="image/x-icon")
+
+        //- temp
+        style.
+            * {
+                outline: 1px solid rgba(255,0,0,0.1);
+            }
+
         block links
     body
 
@@ -15,5 +22,37 @@ html(lang="fr")
         block content
 
         script(src="/js/common/topbar.js")
+        script(src="/socket.io/socket.io.js")
+        script.
+            const socket = io("https://localhost:3000", {
+            transports: ["websocket"],
+            secure: true,
+            });
+
+            const USER_ID = "#{user._id}";
+
+            socket.on("connect", () => {
+                console.log("Connecté au serveur WebSocket");
+                socket.emit("register", USER_ID)
+                console.log("📨 register envoyé :", USER_ID);
+            });
+
+            socket.on("new-notification", (notif) => {
+            console.log("🔔 Nouvelle notif :", notif);
+
+            const container = document.querySelector("#notifications");
+
+            container.innerHTML += `
+                <div class="notif">
+                ❤️ ${notif.from} a liké ton post
+                </div>
+            `;
+            });
+
 
         block scripts
+
+        //- notif si refresh elle reste
+        //- notif 1 fois
+        //- notif on peut cliquer dessus
+        //-  voir si like websocket augmente ? 

@@ -71,7 +71,6 @@ exports.profile = async (req, res) => {
 exports.followingSystem = async (req, res) => {
   const targetUserId = req.params.userId;
   const currentUserId = req.user._id;
-  console.log(currentUserId);
 
   if (targetUserId === currentUserId.toString()) {
     return res.status(400).json({ error: "Impossible de se follow soi-meme" });
@@ -112,8 +111,6 @@ exports.getAllUsers = async () => {
 };
 
 exports.getSuggestionUsers = async (currentUser) => {
-  console.log(currentUser);
-
   return await User.find({
     _id: {
       $ne: currentUser._id, // exclure soi-même

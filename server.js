@@ -27,15 +27,4 @@ app.use(passport.session());
 
 app.use(routes);
 
-// app.post("/file", upload.single("photos"), async (req, res) => {
-//   console.log(req.file);
-//   console.log(req.isAuthenticated());
-
-//   const newUser = new User({
-//     avatar: req.file.filename,
-//   });
-//   const savedUser = await newUser.save();
-//   res.redirect("/");
-// });
-
 module.exports = app;

@@ -13,7 +13,27 @@ block content
                 svg(xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff")
                     path(d="m336-280-56-56 144-144-144-143 56-56 144 144 143-144 56 56-144 143 144 144-56 56-143-144-144 144Z")
         .notifications-container
-            .notification
+            if notifications    
+                each notification in notifications 
+                    if user._id.toString() === notification.to.toString()
+                        .notification
+                            .user-notif-cont
+                                .user-avatar
+                                    img(src=notification.from.avatar || "/images/default-pp.jpg")
+                                .user-name
+                                    strong= notification.from.name 
+                            .info-post-cont
+                                if notification.type === "like"
+                                    p a liké votre publication ❤️
+                                else if notification.type === "follow"
+                                    sest abonne a vous
+                                else if notification.type === "comment"
+                                    p a commente un post
+                                else
+                                    p a eu une interraction avec vous
+                            .post-notif-cont
+                                .post-name
+                                    p= notification.post.title
 
     div.block.default-mg-t.default-mg-bt
         .container

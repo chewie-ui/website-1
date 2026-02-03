@@ -13,10 +13,17 @@ const postSchema = new schema(
       ref: "user",
       required: true,
     },
+    likes: [
+      {
+        type: [schema.Types.ObjectId],
+        ref: "User",
+        default: [],
+      },
+    ],
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 const Post = mongoose.model("post", postSchema);

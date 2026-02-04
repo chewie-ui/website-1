@@ -20,3 +20,4 @@ notificationButtons.forEach((btn) => {
     document.getElementById("notifications").classList.toggle("show");
   });
 });
+

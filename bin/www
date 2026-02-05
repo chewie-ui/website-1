@@ -20,6 +20,17 @@ io.on("connection", (socket) => {
       if (val === socket.id) users.delete(key);
     }
   });
+
+  socket.on("chat message", (msg, from, to) => {
+    console.log({
+      newMessage: msg,
+      from,
+      to,
+      date: Date.now,
+    });
+
+    io.emit("chat message", { msg, from, to });
+  });
 });
 
 app.locals.io = io;

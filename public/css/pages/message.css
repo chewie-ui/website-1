@@ -80,13 +80,16 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  justify-content: flex-end;
   padding: 10px;
+  padding-bottom: 65px;
 }
 
 .messaging-container .messaging-chat .chat-user-infos {
   position: absolute;
   bottom: 10px;
-  width: 100%;
+  left: 10px;
+  width: calc(100% - 30px);
 }
 
 .messaging-container .messaging-chat .chat-user-infos .box-field {
@@ -96,6 +99,7 @@
   box-shadow: var(--shadow);
   border-radius: 7px;
   padding: 4px;
+  background-color: white;
 }
 
 .messaging-container .messaging-chat .chat-user-infos .box-field .field-input {
@@ -115,6 +119,9 @@
 .messaging-container .messaging-chat .chat-box-render {
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-c) white;
   gap: 10px;
 }
 

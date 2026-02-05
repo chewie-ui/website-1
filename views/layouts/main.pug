@@ -24,30 +24,26 @@ html(lang="fr")
         script(src="/js/common/topbar.js")
         script(src="/socket.io/socket.io.js")
         script.
-            const socket = io("https://localhost:3000", {
-            transports: ["websocket"],
-            secure: true,
-            });
+            const socket = io()
 
             const USER_ID = "#{user._id}";
 
             socket.on("connect", () => {
-                console.log("Connecté au serveur WebSocket");
                 socket.emit("register", USER_ID)
-                console.log("📨 register envoyé :", USER_ID);
             });
 
             socket.on("new-notification", (notif) => {
-            console.log("🔔 Nouvelle notif :", notif);
 
-            const container = document.querySelector("#notifications");
+                const container = document.querySelector("#notifications");
 
-            container.innerHTML += `
-                <div class="notif">
-                ❤️ ${notif.from} a liké ton post
-                </div>
-            `;
+                container.innerHTML += `
+                    <div class="notif">
+                    ❤️ ${notif.from} a liké ton post
+                    </div>
+                `;
             });
+
+            
 
 
         block scripts

@@ -14,7 +14,7 @@ block content
 
                     if friends
                         each friend in friends
-                            .friend-box
+                            .friend-box(data-id=friend._id data-name=`${friend.surname} ${friend.name}` data-avatar=friend.avatar)
                                 .friend-avatar
                                     img(src=friend.avatar || "/images/default-pp.jpg")
                                 .friend-infos
@@ -25,79 +25,20 @@ block content
 
 
                 .messaging-chat
+                    .chat-receipter-infos
+                        .infos-receipter
+                            .receipter-img
+                                img#convAvatar(src="/images//default-pp.jpg")
+                            .receipter-name
+                                p#convName Jean Jean
+
                     .chat-box-render#chatMessages
                         .message-box-container.receipter
                             div.message-box
                                 p Testfuedzhftrjeizourio dzsrdf ezrfeztrfezrtgyfezbvhurndejiz; 
                         .message-box-container.receiver
                             div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receiver
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receipter
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receipter
-                            div.message-box
-                                p Testfuedzhftrjeizourio dzsrdf ezrfeztrfezrtgyfezbvhurndejiz; 
-                        .message-box-container.receiver
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receiver
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receipter
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receipter
-                            div.message-box
-                                p Testfuedzhftrjeizourio dzsrdf ezrfeztrfezrtgyfezbvhurndejiz; 
-                        .message-box-container.receiver
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receiver
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receipter
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receipter
-                            div.message-box
-                                p Testfuedzhftrjeizourio dzsrdf ezrfeztrfezrtgyfezbvhurndejiz; 
-                        .message-box-container.receiver
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receiver
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receipter
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receipter
-                            div.message-box
-                                p Testfuedzhftrjeizourio dzsrdf ezrfeztrfezrtgyfezbvhurndejiz; 
-                        .message-box-container.receiver
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receiver
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receipter
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receipter
-                            div.message-box
-                                p Testfuedzhftrjeizourio dzsrdf ezrfeztrfezrtgyfezbvhurndejiz; 
-                        .message-box-container.receiver
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receiver
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
-                        .message-box-container.receipter
-                            div.message-box
-                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik
+                                p EZJUEHGBZYUERHZEUfrje diofjndio fjgiod jgfniodf jgffiojg oiferjg iorejtgoirejtrejtpreu hjtgopefkg ikofdnhg ijfdjgopfd jngijdfj gjf oik 
                    
                     .chat-user-infos
                         .box-field
@@ -126,3 +67,5 @@ block scripts
         socket.on('chat message', ({msg,from,to}) =>{
             console.log({msg,from,to})
         })
+    script.
+         window.currentUserId = "!{user._id}";

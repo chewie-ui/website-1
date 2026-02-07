@@ -169,3 +169,27 @@
   background-color: var(--main-color);
   color: var(--text-color);
 }
+
+.messaging-container .messaging-chat .chat-receipter-infos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: var(--border);
+}
+
+.messaging-container .messaging-chat .chat-receipter-infos .infos-receipter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.messaging-container .messaging-chat .chat-receipter-infos .receipter-img {
+  width: 45px;
+  height: 45px;
+}
+
+.messaging-container .messaging-chat .chat-receipter-infos .receipter-img img {
+  object-fit: cover;
+}

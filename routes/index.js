@@ -13,6 +13,7 @@ const isAuth = require("../middlewares/isAuth");
 
 router.use(require("./auth"));
 router.use(require("./posts"));
+router.use(require("./message"));
 
 router.get("/file", (req, res) => {
   res.render("file");

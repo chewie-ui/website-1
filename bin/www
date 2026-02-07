@@ -16,6 +16,10 @@ io.on("connection", (socket) => {
     users.set(userId, socket.id);
   });
 
+  socket.on("join-conversation", (conversationId) => {
+    socket.join(conversationId);
+  });
+
   socket.on("disconnect", () => {
     for (const [key, val] of users.entries()) {
       if (val === socket.id) users.delete(key);
@@ -31,6 +35,10 @@ io.on("connection", (socket) => {
     });
 
     io.emit("chat message", { msg, from, to });
+  });
+
+  socket.on("leave-conversation", (conversationId) => {
+    socket.leave(conversationId);
   });
 });
 

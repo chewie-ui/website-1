@@ -7,6 +7,7 @@ const multer = require("multer");
 const sessionMiddleware = require("./config/session");
 const passport = require("passport");
 const setCurrentPath = require("./middlewares/setCurrentPath");
+console.log("server.js log");
 
 require("./db");
 require("./config/passport");
